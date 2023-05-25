@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원가입</title>
+    <link crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/resources/stylesheets/common.css}">
+    <link rel="stylesheet" th:href="@{/resources/stylesheets/register.css}">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script defer th:src="@{/resources/scripts/register.js}"></script>
+    <script defer th:src="@{/resources/scripts/common.js}"></script>
+
+
+</head>
+<body>
+<div id="dialogCover"></div>
+<div id="dialogLayer">
+    <span class="title" rel="title">제목</span>
+    <span class="content" rel="content">내용</span>
+    <div class="button-container">
+        <a href="#" class="button cancel" rel="cancel">취소</a>
+        <a href="#" class="button confirm" rel="confirm">확인</a>
+    </div>
+</div>
+<div id="addressLayer">
+
+</div>
+<form class="step-2" id="registerForm">
+    <!-- step-2 임시 지정한거   -->
+    <header class="header">
+        <div class="text-container">
+            <h2 class="title">회원가입</h2>
+            <h3 class="subtitle step-1">서비스 이용약관 & 개인정보 처리방침</h3>
+            <h3 class="subtitle step-2">개인 정보 입력</h3>
+            <h3 class="subtitle step-3">회원가입 완료</h3>
+        </div>
+        <div class="step-container">
+            <div class="number step-1">1</div>
+            <div class="line"></div>
+            <div class="number step-2">2</div>
+            <div class="line"></div>
+            <div class="number step-3">3</div>
+        </div>
+    </header>
+    <main class="main step-1">
+        <label class="label">
+            <span class="title">서비스 이용약관</span>
+            <textarea readonly class="_object-input content" spellcheck="false">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dictum consequat augue sit amet pretium. Proin at fermentum nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nisl dolor, mattis et quam quis, bibendum eleifend massa. Sed suscipit, massa in dignissim vestibulum, enim dui ultrices justo, non dapibus arcu risus eget magna. Vivamus dignissim sem et bibendum bibendum. Morbi lobortis nec tellus sit amet facilisis. Donec malesuada aliquam maximus. Nunc malesuada vestibulum tellus a commodo.
+
+Sed in rhoncus odio, quis sodales odio. Sed sed tellus purus. Etiam ultricies tortor nec tortor luctus luctus. Aliquam quis congue risus. Mauris sit amet posuere diam. Mauris et accumsan risus, sed dapibus lacus. Praesent varius imperdiet ullamcorper. Donec eleifend nibh ut lectus pulvinar, nec aliquam sapien venenatis. Quisque mollis dui dapibus finibus rutrum. Sed non purus congue, rhoncus purus vel, maximus sem. Nullam massa enim, ultrices ornare libero blandit, efficitur efficitur ex. Cras pulvinar, urna ut viverra semper, tortor velit venenatis nisi, id dictum lectus arcu eu tellus. Nullam ullamcorper odio et bibendum luctus. Ut vestibulum faucibus leo.
+
+Pellentesque non commodo nisl. Nullam dapibus elit eu lorem molestie, non ullamcorper neque ultrices. Pellentesque quis turpis non lorem interdum elementum a non ante. Duis vel magna maximus, pulvinar erat sit amet, ullamcorper odio. Mauris et mauris at ligula sollicitudin ultrices ac porttitor ante. Suspendisse eleifend sodales sagittis. Phasellus ornare justo a pellentesque aliquet. Mauris ipsum nibh, eleifend vitae semper at, sodales et velit. Duis bibendum nec erat quis dictum. Aenean et pellentesque ante. Morbi consequat, metus tristique aliquam feugiat, tortor justo aliquam diam, vel auctor enim augue eget neque. Suspendisse potenti. Quisque auctor lectus eget orci iaculis, eget posuere enim feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+Mauris auctor, erat nec molestie porttitor, dui augue pretium metus, eget ornare elit sapien non mauris. Vestibulum accumsan arcu nec nisl semper bibendum. Integer sed posuere diam. In molestie lacinia mattis. Proin massa ipsum, imperdiet eget hendrerit vitae, semper ac leo. Suspendisse maximus ornare vehicula. Pellentesque feugiat accumsan metus quis tincidunt. Maecenas vitae ligula in nibh accumsan finibus. Morbi blandit nec dolor a congue. Aliquam interdum id nunc non semper. Sed fringilla tortor faucibus quam facilisis volutpat. Nullam dictum justo turpis, nec faucibus lorem tempor ac. Aenean congue risus at nibh posuere molestie. Pellentesque at porttitor ante, eu interdum urna.
+
+In et mauris in mauris fringilla maximus. Mauris tempor purus libero, a tempus eros aliquam nec. Etiam sollicitudin neque nec erat dapibus euismod. Pellentesque non congue mauris. Sed sed pharetra lectus, vitae malesuada metus. Donec ac elementum nisi. Sed pharetra massa non lorem vulputate aliquet. Donec sit amet mauris varius, porttitor justo nec, aliquam augue. Phasellus auctor varius ante vel convallis. Morbi non odio sagittis, imperdiet metus sed, consectetur metus. Nunc pretium neque nulla. Sed fringilla laoreet velit non auctor. Donec consectetur eget tellus in cursus. Ut aliquam sapien vehicula odio luctus, sit amet mollis enim varius. Etiam tellus magna, suscipit non elementum nec, malesuada commodo ligula. Proin leo ipsum, luctus ac suscipit ac, tristique in mauris.
+
+            </textarea>
+        </label>
+        <label class="_object-check check-container">
+            <input type="checkbox" name="agreeTerm" class="check">
+            <span class="_checker"></span>
+            <span class="text">
+                위 서비스 이용약관을 읽어보았고 이해하였으며 동의합니다.
+            </span>
+        </label>
+        <label class="label">
+            <span class="title">개인정보 처리방침</span>
+            <textarea readonly class="_object-input content" spellcheck="false">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dictum consequat augue sit amet pretium. Proin at fermentum nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nisl dolor, mattis et quam quis, bibendum eleifend massa. Sed suscipit, massa in dignissim vestibulum, enim dui ultrices justo, non dapibus arcu risus eget magna. Vivamus dignissim sem et bibendum bibendum. Morbi lobortis nec tellus sit amet facilisis. Donec malesuada aliquam maximus. Nunc malesuada vestibulum tellus a commodo.
+
+Sed in rhoncus odio, quis sodales odio. Sed sed tellus purus. Etiam ultricies tortor nec tortor luctus luctus. Aliquam quis congue risus. Mauris sit amet posuere diam. Mauris et accumsan risus, sed dapibus lacus. Praesent varius imperdiet ullamcorper. Donec eleifend nibh ut lectus pulvinar, nec aliquam sapien venenatis. Quisque mollis dui dapibus finibus rutrum. Sed non purus congue, rhoncus purus vel, maximus sem. Nullam massa enim, ultrices ornare libero blandit, efficitur efficitur ex. Cras pulvinar, urna ut viverra semper, tortor velit venenatis nisi, id dictum lectus arcu eu tellus. Nullam ullamcorper odio et bibendum luctus. Ut vestibulum faucibus leo.
+
+Pellentesque non commodo nisl. Nullam dapibus elit eu lorem molestie, non ullamcorper neque ultrices. Pellentesque quis turpis non lorem interdum elementum a non ante. Duis vel magna maximus, pulvinar erat sit amet, ullamcorper odio. Mauris et mauris at ligula sollicitudin ultrices ac porttitor ante. Suspendisse eleifend sodales sagittis. Phasellus ornare justo a pellentesque aliquet. Mauris ipsum nibh, eleifend vitae semper at, sodales et velit. Duis bibendum nec erat quis dictum. Aenean et pellentesque ante. Morbi consequat, metus tristique aliquam feugiat, tortor justo aliquam diam, vel auctor enim augue eget neque. Suspendisse potenti. Quisque auctor lectus eget orci iaculis, eget posuere enim feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+Mauris auctor, erat nec molestie porttitor, dui augue pretium metus, eget ornare elit sapien non mauris. Vestibulum accumsan arcu nec nisl semper bibendum. Integer sed posuere diam. In molestie lacinia mattis. Proin massa ipsum, imperdiet eget hendrerit vitae, semper ac leo. Suspendisse maximus ornare vehicula. Pellentesque feugiat accumsan metus quis tincidunt. Maecenas vitae ligula in nibh accumsan finibus. Morbi blandit nec dolor a congue. Aliquam interdum id nunc non semper. Sed fringilla tortor faucibus quam facilisis volutpat. Nullam dictum justo turpis, nec faucibus lorem tempor ac. Aenean congue risus at nibh posuere molestie. Pellentesque at porttitor ante, eu interdum urna.
+
+In et mauris in mauris fringilla maximus. Mauris tempor purus libero, a tempus eros aliquam nec. Etiam sollicitudin neque nec erat dapibus euismod. Pellentesque non congue mauris. Sed sed pharetra lectus, vitae malesuada metus. Donec ac elementum nisi. Sed pharetra massa non lorem vulputate aliquet. Donec sit amet mauris varius, porttitor justo nec, aliquam augue. Phasellus auctor varius ante vel convallis. Morbi non odio sagittis, imperdiet metus sed, consectetur metus. Nunc pretium neque nulla. Sed fringilla laoreet velit non auctor. Donec consectetur eget tellus in cursus. Ut aliquam sapien vehicula odio luctus, sit amet mollis enim varius. Etiam tellus magna, suscipit non elementum nec, malesuada commodo ligula. Proin leo ipsum, luctus ac suscipit ac, tristique in mauris.
+
+            </textarea>
+        </label>
+        <label class="_object-check check-container">
+            <input type="checkbox" name="agreePrivacy" class="check">
+            <span class="_checker"></span>
+            <span class="text">
+                위 서비스 이용약관을 읽어보았고 이해하였으며 동의합니다.
+            </span>
+        </label>
+    </main>
+    <input name="emailSalt" type="hidden">
+    <main class="main step-2">
+        <section class="section">
+            <label class="label">
+
+                <input class="_object-input" maxlength="50" name="email" placeholder="이메일" type="email">
+                <input class="_object-button minor" name="emailSend" type="button" value="인증번호 전송">
+            </label>
+            <label class="label">
+
+                <input disabled class="_object-input" maxlength="6" minlength="6" name="emailCode"
+                       placeholder="이메일 인증번호" type="number">
+                <input disabled class="_object-button minor" name="emailVerify" type="button" value="인증번호 확인">
+            </label>
+            <label class="label">
+
+                <input class="_object-input" maxlength="10" name="nickname" placeholder="별명" type="text">
+            </label>
+        </section>
+        <section class="section">
+            <label class="label">
+
+                <input class="_object-input" maxlength="50" name="password" placeholder="비밀번호" type="password">
+            </label>
+            <label class="label">
+
+                <input class="_object-input" maxlength="50" name="passwordCheck" placeholder="비밀번호 재입력" type="password">
+            </label>
+        </section>
+        <section class="section">
+            <label class="label">
+                <input readonly class="_object-input" name="addressPostal" placeholder="우편번호" type="text">
+                <input class="_object-button minor" name="addressFind" type="button" value="우편번호 찾기">
+            </label>
+            <label class="label">
+                <input readonly class="_object-input" maxlength="100" name="addressPrimary"
+                       placeholder="'우편번호 찾기' 버튼을 클릭하여 주소를 지정해 주세요." type="text">
+            </label>
+            <label class="label">
+                <input class="_object-input" maxlength="100" name="addressSecondary"
+                       placeholder="상세 주소를 입력해주세요. (건물 이름 및 동, 호 등)" type="text">
+            </label>
+        </section>
+        <section class="section">
+            <label class="label">
+                <select class="_object-input minor" name="gender">
+                    <option disabled hidden selected>성별</option>
+                    <option value="F">여성</option>
+                    <option value="M">남성</option>
+                </select>
+                <input class="_object-input" name="name" maxlength="5" placeholder="실명" type="text">
+                <input class="_object-input" name="birth" title="생년월일" type="date">
+            </label>
+            <label class="label">
+                <select class="_object-input minor" name="contactProvider">
+                    <option selected value="KT">KT</option>
+                    <option value="LGU">LGU+</option>
+                    <option value="SK">SK</option>
+                </select>
+                <input class="_object-input" name="contact" placeholder="연락처 ('-' 없이 입력해 주세요.)" maxlength="12"
+                       type="text">
+            </label>
+        </section>
+    </main>
+    <main class="main step-3">
+        <label class="label" >
+            <h2 class="title">회원가입이 완료되었습니다!</h2>
+            <h3 class="subtitle step-3">회원가입해 주셔서 감사드립니다. 아래 '완료' 버튼을 클릭하시면 로그인 페이지로 이동합니다.</h3>
+        </label>
+    </main>
+
+    <div class="button-container">
+        <a href="#" class="_object-button button cancel">취소</a>
+        <input class="_object-button _blue button next" type="submit" value="다음">
+        <a th:href="@{/login}" class="_object-button _blue button finish">완료</a>
+    </div>
+
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

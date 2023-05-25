@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+#loginForm {
+    width: 100%;
+    max-width: 30rem;
+    box-sizing: border-box;
+    padding: 2.5rem;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#loginForm > .title {
+    font-size: 2.25rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+#loginForm > .main {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1.5rem 2rem;
+
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#loginForm > .main > * + * {
+    margin-top: 0.5rem;
+}
+
+#loginForm > .main > .label {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#loginForm > .main > .menu {
+    margin-top: 1rem;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#loginForm > .main > .menu > .item {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#loginForm > .main > .menu > .item + .item {
+    margin-top: 0.15rem;
+}
+
+#loginForm > .main > .menu > .item > .text {
+    margin-right: 0.5rem;
+}
+
+#loginForm > .main > .menu > .item > .link {
+    color: #2e86c1;
+    text-decoration: none;
+}
+
+#loginForm > .main > .menu > .item > .link:hover {
+    text-decoration: underline;
+}

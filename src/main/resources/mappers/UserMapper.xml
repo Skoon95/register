@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ghchoi.studywebuser.mappes.UserMapper">
+
+    <insert id="insertRegisterCode"
+            useGeneratedKeys="true"
+            keyColumn="index"
+            keyProperty="index"
+            parameterType="com.ghchoi.studywebuser.entities.RegisterCodeEntity">
+        INSERT INTO `study_web`.`register_codes` (email, code, salt, created_at, expires_at, verified_flag)
+        VALUES (#{email}, #{code}, #{salt}, #{createdAt}, #{expiresAt}, #{isVerified})
+    </insert>
+
+    <insert id="insertUser"
+            parameterType="com.ghchoi.studywebuser.entities.UserEntity">
+        INSERT INTO `study_web`.`users`
+        (`email`, `password`, `nickname`, `address_postal`, `address_primary`,
+         `address_secondary`, `gender`, `name`, `birth`, `contact_provider`, `contact`,
+         `registered_at`)
+        VALUES (#{email},
+                #{password},
+                #{nickname},
+                #{addressPostal},
+                #{addressPrimary},
+                #{addressSecondary},
+                #{gender},
+                #{name},
+                #{birth},
+                #{contactProvider},
+                #{contact},
+                IFNULL(#{registeredAt}, DEFAULT(`registered_at`)))
+    </insert>
+
+    <select id="selectRegisterCodeByEmailCodeSalt"
+            resultType="com.ghchoi.studywebuser.entities.RegisterCodeEntity">
+        SELECT `index`         AS `index`,
+               `email`         AS `email`,
+               `code`          AS `code`,
+               `salt`          AS `salt`,
+               `created_at`    AS `createdAt`,
+               `expires_at`    AS `expiresAt`,
+               `verified_flag` AS `isVerified`
+        FROM `study_web`.`register_codes`
+        WHERE `email` = #{email}
+          AND BINARY `code` = #{code}
+          AND BINARY `salt` = #{salt}
+        LIMIT 1
+    </select>
+
+    <select id="selectUserByEmail"
+            resultType="com.ghchoi.studywebuser.entities.UserEntity">
+        SELECT `email`             AS `email`,
+               `password`          AS `password`,
+               `nickname`          AS `nickname`,
+               `address_postal`    AS `addressPostal`,
+               `address_primary`   AS `addressPrimary`,
+               `address_secondary` AS `addressSecondary`,
+               `gender`            AS `gender`,
+               `name`              AS `name`,
+               `birth`             AS `birth`,
+               `contact_provider`  AS `contactProvider`,
+               `contact`           AS `contact`,
+               `registered_at`     AS `registeredAt`
+        FROM `study_web`.`users`
+        WHERE BINARY `email` = #{email}
+        LIMIT 1
+    </select>
+
+    <select id="selectUserByNickname"
+            resultType="com.ghchoi.studywebuser.entities.UserEntity">
+        SELECT `email`             AS `email`,
+               `password`          AS `password`,
+               `nickname`          AS `nickname`,
+               `address_postal`    AS `addressPostal`,
+               `address_primary`   AS `addressPrimary`,
+               `address_secondary` AS `addressSecondary`,
+               `gender`            AS `gender`,
+               `name`              AS `name`,
+               `birth`             AS `birth`,
+               `contact_provider`  AS `contactProvider`,
+               `contact`           AS `contact`,
+               `registered_at`     AS `registeredAt`
+        FROM `study_web`.`users`
+        WHERE BINARY `nickname` = #{nickname}
+        LIMIT 1
+    </select>
+
+    <select id="selectUserByContact"
+            resultType="com.ghchoi.studywebuser.entities.UserEntity">
+        SELECT `email`             AS `email`,
+               `password`          AS `password`,
+               `nickname`          AS `nickname`,
+               `address_postal`    AS `addressPostal`,
+               `address_primary`   AS `addressPrimary`,
+               `address_secondary` AS `addressSecondary`,
+               `gender`            AS `gender`,
+               `name`              AS `name`,
+               `birth`             AS `birth`,
+               `contact_provider`  AS `contactProvider`,
+               `contact`           AS `contact`,
+               `registered_at`     AS `registeredAt`
+        FROM `study_web`.`users`
+        WHERE BINARY `contact` = #{contact}
+        LIMIT 1
+    </select>
+
+    <select id="selectUserByEmailPassword"
+            resultType="com.ghchoi.studywebuser.entities.UserEntity">
+        SELECT `email`             AS `email`,
+               `password`          AS `password`,
+               `nickname`          AS `nickname`,
+               `address_postal`    AS `addressPostal`,
+               `address_primary`   AS `addressPrimary`,
+               `address_secondary` AS `addressSecondary`,
+               `gender`            AS `gender`,
+               `name`              AS `name`,
+               `birth`             AS `birth`,
+               `contact_provider`  AS `contactProvider`,
+               `contact`           AS `contact`,
+               `registered_at`     AS `registeredAt`
+        FROM `study_web`.`users`
+        WHERE BINARY `email` = #{email}
+          AND BINARY `password` = #{password}
+        LIMIT 1
+    </select>
+
+    <update id="updateRegisterCode"
+            parameterType="com.ghchoi.studywebuser.entities.RegisterCodeEntity">
+        UPDATE `study_web`.`register_codes`
+        SET `email`         = #{email},
+            `code`          = #{code},
+            `salt`          = #{salt},
+            `created_at`    = #{createdAt},
+            `expires_at`    = #{expiresAt},
+            `verified_flag` = #{isVerified}
+        WHERE `index` = #{index}
+        LIMIT 1
+    </update>
+
+</mapper>
